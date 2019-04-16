@@ -1,0 +1,17 @@
+# Mac file system files
+.DS_Store
+
+# third party packages
+node_modules/
+
+# npm logs
+npm-debug.log
+
+# transpiled asset folder
+/build
+# webpack stats
+stats.json
+
+# vscode settings
+.vscode/
+*.code-workspace

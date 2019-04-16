@@ -1,0 +1,11 @@
+# Browser support
+
+last 4 versions
+>1%
+not ie < 11
+not OperaMini all
+not UCAndroid < 11.4
+not BlackBerry < 10
+not OperaMobile < 37
+not ExplorerMobile < 11
+not Android < 5

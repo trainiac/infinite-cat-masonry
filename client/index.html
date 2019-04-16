@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{{ head }}}
+    <link
+      rel="shortcut icon"
+      href="<%= htmlWebpackPlugin.options.faviconPath %>"
+      type="image/x-icon"
+    />
+    {{{ renderResourceHints() }}}
+    <!-- inline_css_outlet -->
+    {{{ renderStyles() }}}
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <!--vue-ssr-outlet-->
+    <% if (htmlWebpackPlugin.options.optimize){ %>
+      <%= htmlWebpackPlugin.files.runtime %>
+    <% } %>
+    {{{ renderState() }}} {{{ renderScriptsNoRuntime() }}}
+  </body>
+</html>

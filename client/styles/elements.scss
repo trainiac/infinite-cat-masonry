@@ -1,0 +1,215 @@
+@import '~styles/variables';
+
+html {
+  line-height: 1.15;
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #5c5c5c;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 2.8rem;
+  @media #{$isMobile} {
+    font-size: 2.4rem;
+  }
+}
+
+h2 {
+  font-size: 2.6rem;
+  @media #{$isMobile} {
+    font-size: 2.2rem;
+  }
+}
+
+h3 {
+  font-size: 2.2rem;
+  @media #{$isMobile} {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 2rem;
+  @media #{$isMobile} {
+    font-size: 1.8rem;
+  }
+}
+
+h5 {
+  font-size: 1.8rem;
+  @media #{$isMobile} {
+    font-size: 1.6rem;
+  }
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+dl {
+  margin: 0;
+}
+
+dd,
+dt {
+  display: inline-block;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 0 0.5rem;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  border-radius: 0;
+}
+
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+select {
+  // So FF select matches heigh of input
+  height: 1.15em;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features, property-no-unknown */
+
+  // IE 11
+  /* stylelint-disable-next-line no-descending-specificity */
+  &::-ms-expand {
+    display: none;
+  }
+
+  // IE 11
+  /* stylelint-disable-next-line no-descending-specificity */
+  &::-ms-value {
+    background-color: transparent; /*make the select background transparent in ie */
+    color: inherit;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+button {
+  color: inherit;
+  text-shadow: none;
+  font-size: inherit;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  span {
+    pointer-events: none;
+  }
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  /*
+    This is to fix the nested pointer-events: none bug
+    If a tag has a child span with pointer-events: none
+    click events dont work
+   */
+  display: inline-block;
+  span {
+    pointer-events: none;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+textarea {
+  border: none;
+  overflow: auto;
+  box-shadow: none;
+  resize: none; /* stylelint-disable-line plugin/no-unsupported-browser-features, property-no-unknown */
+}

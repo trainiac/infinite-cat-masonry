@@ -1,0 +1,67 @@
+// Devices
+$hugeDesktop: 160;
+$largeDesktop: 128;
+$desktop: 98;
+$tablet: 85;
+$mobile: 60;
+$small: 48;
+$tiny: 38;
+$convertFromRemToEm: 0.625;
+
+$hugeDesktopWidth: #{$hugeDesktop}rem;
+$largeDesktopWidth: #{$largeDesktop}rem;
+$desktopWidth: #{$desktop}rem;
+$tabletWidth: #{$tablet}rem;
+$mobileWidth: #{$mobile}rem;
+
+// The html element base font-size is 10px, 1 rem, 1 em.
+// Media queries don't take into account font-size on html element
+// So to convert rems where font-size is 10px to ems on where font-size is 16px
+// rems * (10 / 16) = ems
+$hugeDesktopWidthMq: #{$hugeDesktop * $convertFromRemToEm}em;
+$largeDesktopWidthMq: #{$largeDesktop * $convertFromRemToEm}em;
+$desktopWidthMq: #{$desktop * $convertFromRemToEm}em;
+$tabletWidthMq: #{$tablet * $convertFromRemToEm}em;
+$mobileWidthMq: #{$mobile * $convertFromRemToEm}em;
+$smallWidthMq: #{$small * $convertFromRemToEm}em;
+$tinyWidthMq: #{$tiny * $convertFromRemToEm}em;
+
+$isAboveHugeDesktop: (
+  min-width: $hugeDesktopWidthMq,
+);
+$isBelowHugeDesktop: (
+  max-width: $hugeDesktopWidthMq,
+);
+$isAboveLargeDesktop: (
+  min-width: $largeDesktopWidthMq,
+);
+$isBelowLargeDesktop: (
+  max-width: $largeDesktopWidthMq,
+);
+$isAboveDesktop: (
+  min-width: $desktopWidthMq,
+);
+$isBelowDesktop: (
+  max-width: $desktopWidthMq,
+);
+$isAboveTablet: (
+  min-width: $tabletWidthMq,
+);
+$isBelowTablet: (
+  max-width: $tabletWidthMq,
+);
+$isAboveMobile: (
+  min-width: $mobileWidthMq,
+);
+$isMobile: (
+  max-width: $mobileWidthMq,
+);
+$isSmall: (
+  max-width: $smallWidthMq,
+);
+$isAboveTiny: (
+  min-width: $tinyWidthMq,
+);
+$isTiny: (
+  max-width: $tinyWidthMq,
+);

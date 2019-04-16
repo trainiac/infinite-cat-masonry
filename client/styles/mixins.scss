@@ -1,0 +1,36 @@
+// Icons
+@mixin example-icon {
+  &:before {
+    content: '';
+  }
+}
+
+@mixin centerIcon {
+  position: relative;
+  &:before {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin fontelloIcon {
+  font-family: fontello, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* base, but can be overridden */
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
