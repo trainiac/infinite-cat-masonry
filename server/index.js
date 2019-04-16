@@ -6,17 +6,12 @@ const logger = require('../client/shared/logger')
 let server
 
 if (process.env.NODE_ENV === 'production') {
-  const logHost =
-    process.env.APP_ENV === 'production'
-      ? 'api.elfster.com'
-      : 'api.dev.elfster.com'
-
   process.on('unhandledRejection', reason => {
     const wrappedError = new TError('Unhandled server promise rejection', {
       name: 'UnhandledServerRejectionError',
       cause: reason,
     })
-    logger(TError.toLog(wrappedError), logHost)
+    logger(TError.toLog(wrappedError))
     console.log(reason)
     process.exit(1)
   })
@@ -26,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
       name: 'FatalServerExceptionError',
       cause: err,
     })
-    logger(TError.toLog(wrappedError), logHost)
+    logger(TError.toLog(wrappedError))
     console.log(err)
     process.exit(1)
   })
@@ -41,18 +36,15 @@ if (process.env.NODE_ENV === 'production') {
             cause: err,
           }
         )
-        logger(TError.toLog(wrappedError), logHost)
+        logger(TError.toLog(wrappedError))
         console.log(err)
         process.exit(1)
       } else {
-        logger(
-          {
-            level: 'info',
-            category: 'ServerGracefullyShutdown',
-            message: 'Server was able to gracefully shutdown',
-          },
-          logHost
-        )
+        logger({
+          level: 'info',
+          category: 'ServerGracefullyShutdown',
+          message: 'Server was able to gracefully shutdown',
+        })
         console.log('server stopped graceully after completing requests')
         process.exit(0)
       }
