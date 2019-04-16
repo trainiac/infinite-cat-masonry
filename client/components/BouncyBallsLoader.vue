@@ -15,7 +15,7 @@ export default {
     color: {
       type: String,
       required: false,
-      default: 'white',
+      default: 'purple',
     },
   },
 }
