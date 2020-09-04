@@ -89,7 +89,7 @@
     "inline-manifest-webpack-plugin": "^4.0.2",
     "lodash-webpack-plugin": "^0.11.5",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "opn": "^5.4.0",
     "postcss": "^7.0.14",
     "postcss-flexbugs-fixes": "^4.1.0",
